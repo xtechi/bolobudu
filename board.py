@@ -93,8 +93,7 @@ class Board:
         """Возвращает список возможных ходов для фишки по вертикали, горизонтали и диагонали"""
         moves = []
         directions = [
-            (-1, 0), (1, 0), (0, -1), (0, 1),    # вертикаль и горизонталь
-            (-1, -1), (-1, 1), (1, -1), (1, 1)   # диагонали
+            (-1, 0), (1, 0), (0, -1), (0, 1),    
         ]
         for dr, dc in directions:
             r, c = row + dr, col + dc
@@ -162,17 +161,17 @@ class Board:
                 # Показ возможных ходов
                 if (row, col) in self.valid_moves:
                     pygame.draw.circle(win, (0, 255, 0), 
-                                     (x + self.cell_size//2, y + self.cell_size//2), 
+                                     (x + self.cell_size//2, y + self.cell_size//2),
                                      10)
                 
                 # Рисование фишек
                 if self.grid[row][col] == PLAYER1:
                     pygame.draw.circle(win, (255, 0, 0), 
-                                     (x + self.cell_size//2, y + self.cell_size//2), 
+                                     (x + self.cell_size//2, y + self.cell_size//2),
                                      self.cell_size//3)
                 elif self.grid[row][col] == PLAYER2:
-                    pygame.draw.circle(win, (0, 0, 255), 
-                                     (x + self.cell_size//2, y + self.cell_size//2), 
+                    pygame.draw.circle(win, (0, 0, 255),
+                                     (x + self.cell_size//2, y + self.cell_size//2),
                                      self.cell_size//3)
                     
         # Рисование линий сетки
@@ -219,3 +218,4 @@ class Board:
                             if self.grid[after_r][after_c] == opponent:
                                 self.grid[after_r][after_c] = 0
 
+#вроде работает

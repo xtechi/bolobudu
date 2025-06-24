@@ -26,7 +26,7 @@ class Button:
             self.current_color = self.color
 
         pygame.draw.rect(surface, self.current_color, self.rect, border_radius=10)
-        pygame.draw.rect(surface, (0, 0, 0), self.rect, 2, border_radius=10)  # Черная рамка
+        pygame.draw.rect(surface, (0, 0, 0), self.rect, 2, border_radius=10)  
 
         text_surface = self.font.render(self.text, True, (255, 255, 255))
         text_rect = text_surface.get_rect(center=self.rect.center)
